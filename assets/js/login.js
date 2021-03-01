@@ -20,43 +20,43 @@ $(function() {
             ],
             //两次密码的验证
             repwd: function(value) {
-                var pwd = $('.reg-box [name = password]').val()
-                if (value != pwd) {
+                var pwd = $('.reg-box [name=password]').val()
+                if (pwd !== value) {
                     return '两次密码输入不一致'
                 }
             }
         })
         //注册表单的提交监听事件
-    $('.reg-box').on('submit', function(e) {
+    $('#form-reg').on('submit', function(e) {
             //阻止默认行为
             e.preventDefault();
             var data = {
                 username: $('#form-reg [name=username]').val(),
-                password: $('#form-reg [name=password]').val()
+                password: $('#form-reg [name=password]').val(),
             }
             $.post('/api/reguser', data, function(res) {
                 if (res.status !== 0) {
-                    layui.layer.msg(res.msg);
+                    return layer.msg(res.message);
                 }
-                layui.layer.msg('注册成功，请登录');
+                layer.msg('注册成功，请登录');
                 $('#link_login').click();
             })
         })
         //登录表单提交事件的监听
-    $('.login-box').on('submit', function(e) {
+    $('#form-login').on('submit', function(e) {
         //阻止表单的默认行为
         e.preventDefault();
         $.ajax({
             method: "post",
             url: "/api/login",
             //快速获取表单的值
-            data: $('#form-login').serialize(),
+            data: $(this).serialize(),
             success: function(res) {
                 // console.log(res);
                 if (res.status !== 0) {
-                    return layui.layer.msg('登录失败!');
+                    return layer.msg('登录失败!');
                 }
-                layui.layer.msg('登录成功!');
+                layer.msg('登录成功!');
                 // 将登录成功得到的 token 字符串，保存到 localStorage 中
                 localStorage.setItem('token', res.token)
                     // 跳转到后台主页
