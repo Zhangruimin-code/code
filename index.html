@@ -24,9 +24,9 @@
                         <span class="avatar">Z</span> 个人中心
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">更换头像</a></dd>
-                        <dd><a href="">重置密码</a></dd>
+                        <dd><a href="/user/user_info.html" target="fm">基本资料</a></dd>
+                        <dd><a href="/user/user_avatar.html" target="fm">更换头像</a></dd>
+                        <dd><a href="/user/user_pwd.html" target="fm">重置密码</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -38,6 +38,7 @@
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
                 <div class="userinfo">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
                     <span class="avatar">Z</span>
                     <span id="welcome">欢迎 z</span>
                 </div>
@@ -46,7 +47,6 @@
                 空值（默认）不收缩兄弟菜单子菜单  all收缩全部兄弟菜单子菜单-->
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="test">
                     <!-- layui-this  默认被选中的页面 -->
-
                     <li class="layui-nav-item layui-this">
                         <span class="iconfont icon-home"></span
               ><a href="./home/dashboard.html" target="fm">首页</a>
@@ -75,15 +75,15 @@
               <dl class="layui-nav-child">
                 <dd>
                   <i class="layui-icon layui-icon-app"></i
-                  ><a href="javascript:;">基本资料</a>
+                  ><a href="/user/user_info.html" target="fm">基本资料</a>
                 </dd>
                 <dd>
                   <i class="layui-icon layui-icon-app"></i
-                  ><a href="javascript:;">更换头像</a>
+                  ><a href="/user/user_avatar.html" target="fm">更换头像</a>
                 </dd>
                 <dd>
                   <i class="layui-icon layui-icon-app"></i
-                  ><a href="">重置密码</a>
+                  ><a href="/user/user_pwd.html" target="fm">重置密码</a>
                 </dd>
               </dl>
             </li>

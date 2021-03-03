@@ -29,11 +29,6 @@ function getUserInfo() {
 }
 
 
-
-
-
-
-
 //渲染数据
 function renderAvatar(user) {
 
